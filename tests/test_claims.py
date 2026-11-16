@@ -189,5 +189,6 @@ def test_readme_nennt_die_korrekturen_der_fruehen_messung_und_ihre_neuen_werte()
 
 
 def test_readme_hat_keine_planungswoerter_und_keine_platzhalter():
-    for wort in ("Stück", "Linie", "Vormessung", "TESTZAHL", "TODO:", "trägt", "tragen", "Saatwert", "läuft lokal"):
+    for wort in ("Stück", "Linie", "Vormessung", "TESTZAHL", "TODO:", "trägt", "tragen", "Saatwert", "läuft lokal",
+                 "gegenüber dem Plan", "von zwölf Demos", "Vorarbeit"):
         assert wort not in README.replace("TODO nach dem Deploy", ""), wort
