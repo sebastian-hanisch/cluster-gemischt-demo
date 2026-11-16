@@ -287,5 +287,5 @@ def anova_sd(m: int, k: int, su2: float, s2: float) -> float:
 
 
 def sd_grenze_viele_container(m: int, su2: float) -> float:
-    """Grenzwert der Streuung von σ̂_u² für k → ∞ im ausgewogenen Fall: σ_u²·√(2/(m−1)). Mehr Container je Kunde senken die Streuung nur bis hierher."""
+    """Grenzwert der Streuung von σ̂_u² für k → ∞ im ausgewogenen Fall ohne Kundenmerkmal im Modell: σ_u²·√(2/(m−1)) (mit einem Kundenmerkmal im Modell m−2 statt m−1). Mehr Container je Kunde senken die Streuung nur bis hierher."""
     return su2 * float(np.sqrt(2.0 / (m - 1)))

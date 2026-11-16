@@ -123,7 +123,7 @@ def test_streuung_der_varianzkomponente():
 def test_varianzkomponente_ohne_kundenmerkmal():
     mit, ohne = FZ["su2_merkmal"]["mit"], FZ["su2_merkmal"]["ohne"]
     assert (ev.de(mit["mean"], 3), ev.de(ohne["mean"], 3)) == ("0,091", "0,117") and mit["ok"] == ohne["ok"] == 1000
-    assert "σ̂_u² im Mittel 0,117 statt 0,091 (mit dem Merkmal); erwartet 0,1125 (0,09 + 0,30²·0,25)" in README
+    assert "σ̂_u² im Mittel 0,117 statt 0,091 (mit dem Merkmal); erwartet etwa 0,1125 (0,09 + 0,30²·0,25, für gleich große Kunden)" in README
     assert 0.09 + 0.30 ** 2 * 0.25 == pytest.approx(0.1125)                       # Varianz einer halb/halb verteilten 0/1-Wirkung −0,30: 0,30²·(1/2)·(1/2)
 
 

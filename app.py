@@ -1,7 +1,7 @@
 """Cluster und gemischte Modelle – interaktive Konzept-Demo
 Sebastian Hanisch - Operations Research und Machine Learning
 
-Mehrere Container desselben Kunden sind keine unabhängigen Beobachtungen: für ein Merkmal, das nur der Kunde hat, zählt die Kundenzahl, nicht die Zeilenzahl.
+Mehrere Container desselben Kunden sind keine unabhängigen Beobachtungen: für ein Merkmal, das nur der Kunde hat, zählt im Wesentlichen die Kundenzahl (von 360 Containern sind etwa 46 wirksam).
 Vehikel: Import-Container der Verweilzeit-Welt, log-Verweilzeit, Kunden als Cluster. Alle Formeln und Befunde sind eigene Nachrechnung in diesem Modell, bei diesen
 Parametern (Zufallsachsenabschnitt, normale Fehler, konstante Streuung, 6 bis 48 Kunden); Kern: clg_mixed.py, Vehikel: clg_vehicle.py.
 
@@ -108,8 +108,8 @@ with st.container(key="kopf"):
     st.title("🧩 Cluster und gemischte Modelle")
 st.markdown(
     """
-**Mehrere Container desselben Kunden sind keine unabhängigen Beobachtungen.** Gehört ein Merkmal nur dem **Kunden** (hier ein erfundener **Rahmenvertrag**), zählt die **Kundenzahl**, nicht
-die Zeilenzahl: das naive Intervall einer Regression ist dann viel zu schmal. Die Demo misst das an den **Import-Containern** der Verweilzeit-Welt (log-Verweilzeit, Kunden als Cluster)
+**Mehrere Container desselben Kunden sind keine unabhängigen Beobachtungen.** Gehört ein Merkmal nur dem **Kunden** (hier ein erfundener **Rahmenvertrag**), zählt im Wesentlichen die **Kundenzahl** (von 360 Containern sind etwa 46
+wirksam): das naive Intervall einer Regression ist dann bei merklicher Kundenstreuung zu schmal (σ_u = 0,30: 50,8 % Überdeckung statt 95 %). Die Demo misst das an den **Import-Containern** der Verweilzeit-Welt (log-Verweilzeit, Kunden als Cluster)
 und vergleicht das naive Intervall mit **cluster-robusten Fehlern (CR1)**, dem **gemischten Modell (REML)** und der **Kunden-Mittel-Methode**. Sie zeigt auch, wann das gemischte
 Modell selbst am **Rand** σ̂_u² = 0 liegt und warum ein Merkmal **innerhalb** der Kunden anders ist. Alle Formeln und Befunde sind **eigene Nachrechnung in diesem Modell**
 (Zufallsachsenabschnitt, normale Fehler, konstante Streuung, 6 bis 48 Kunden); Literatur dazu steht in der README mit dem Grad ihrer Einsicht.
